@@ -74,10 +74,10 @@ void title_screen( );
 // Start Application     :
 //------------------------
 int main(  ){
-	//---------------------------------------------------------------------
-	// Opening Title Screen                                               :
-	//---------------------------------------------------------------------
-	title_screen( );
+    //---------------------------------------------------------------------
+    // Opening Title Screen                                               :
+    //---------------------------------------------------------------------
+    title_screen( );
 
     //---------------------------------------------------------------------
     // Open Input File Stream                                             :
@@ -93,19 +93,19 @@ int main(  ){
     StudentList.CreateClassList( StudentList_input );  // Populate the 
                                                        // database
 
-	StudentList.FindGPA(  );                           // Populate the
-													   // database with
-													   // Grade Point Averages
+    StudentList.FindGPA(  );                           // Populate the
+						       // database with
+						       // Grade Point Averages
 
     //---------------------------------------------------------------------
     // Program And Menu -  Variable Initializations                       :
     //---------------------------------------------------------------------
     // While-Loop Flag - Program Status Indicator:
     PROGRAM_STATE program_status   = ON;               // Allow The Menu Module
-													   // To Start
+						       // To Start
     // While-Loop Choice Selection:
     MENU_OPTIONS  main_menu_choice = MAIN_MENU;        // Default Main Menu
-													   // Choice
+						       // Choice
 
 
     //---------------------------------------------------------------------
@@ -270,7 +270,6 @@ void title_screen( ){
 		// Flush The Screen                                               :
 		//-----------------------------------------------------------------
 		cout << flush;
-
 
 	#endif
 }
