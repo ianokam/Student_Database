@@ -74,8 +74,8 @@ class student_roster_list{
             // Last Name, Or ID And Inserts The Course For Them:
             void AddCourse(     int    identification_num,
                                 string course__name,          
-				                int    class_credit,
-						        char   current_grade	    	  );
+				int    class_credit,
+				char   current_grade	    	  );
     
             // Searches The Student Roster
             // Using Either Their First Name,
@@ -112,10 +112,10 @@ class student_roster_list{
         //------------------------------------
         // ACCESSOR - FUNCTION MEMBERS       :
         //------------------------------------
-			// Calculates The GPA For ALL Students: ***
-			void FindGPA(  );
+	    // Calculates The GPA For ALL Students: ***
+	    void FindGPA(  );
 
-			//-----------------------------------------------------
+	    //-----------------------------------------------------
             // Searches And Prints The Students Info -
             // First Name, Last Name, ID, GPA,
             // And Their Registered Courses:
@@ -142,15 +142,15 @@ class student_roster_list{
             // Alphabetically, Sorted By Last Name :
             void Print(  );
 
-			//-----------------------------------------------------
-			// Printing All The Students In The Roster,
-			// In Any Order ( Used With The Sort Function )
-			void Sort_Print(  );
+	    //-----------------------------------------------------
+	    // Printing All The Students In The Roster,
+	    // In Any Order ( Used With The Sort Function )
+	    void Sort_Print(  );
 
-			//-----------------------------------------------------
-			// Returns The Number Of Students
-			// In The DataBase:
-			int Student_Count(  ) const;
+	    //-----------------------------------------------------
+	    // Returns The Number Of Students
+	    // In The DataBase:
+	    int Student_Count(  ) const;
     
     //----------------------------------------
     // Private Data Members (Variables)      :
@@ -159,9 +159,9 @@ class student_roster_list{
         //------------------------------------
         // DATA MEMBERS                      :
         //------------------------------------
-			// The vriable Checks If print function 
-			// has been initialized:
-			bool print_initialized = false;
+	    // The vriable Checks If print function 
+	    // has been initialized:
+	    bool print_initialized = false;
 
             //  Students Personal Class List
             // ( Singly Linked List )
@@ -220,51 +220,50 @@ class student_roster_list{
             // Dynamic Array Container:
             vector< student_record* > student_list_arr;
 
-			// Student Roster ( Doubly Linked List )¬ // Head Pointer:¬
-			student_record* student_record_head_ptr;
+	    // Student Roster ( Doubly Linked List )¬ // Head Pointer:¬
+	    student_record* student_record_head_ptr;
 
-			// Student Counter:
-			int max_student_counter = 0;
+	    // Student Counter:
+	    int max_student_counter = 0;
 
-		//------------------------------------
-		// HELPER - FUNCTION MEMBERS         :
-		//------------------------------------
-			// This Checks If The New Student Input Already Exists In The List:
-			bool student_exists( string  f_name,
-                                 string  l_name,
-                                 int     identification_num    );
+	    //------------------------------------
+	    // HELPER - FUNCTION MEMBERS         :
+	    //------------------------------------
+	        // This Checks If The New Student Input Already Exists In The List:
+		bool student_exists( string  f_name,
+                                     string  l_name,
+                                     int     identification_num    );
 
-			//-----------------------------------------------------
-			// Formats the GPA to 2 decimal places:
-			string gpa_formatter
-			(   vector< student_record* > &student_list_arr_container,
-				int    index											);
+		//-----------------------------------------------------
+		// Formats the GPA to 2 decimal places:
+		string gpa_formatter(   vector< student_record* > &student_list_arr_container,
+			                int    index					         );
 
-			//-----------------------------------------------------
-			// Calculates The GPA For One Student When Inserting/Deleting Classes:
-			void Find_one_GPA(	vector< student_record* > &student_list_arr_container,
-								int    index											);
+		//-----------------------------------------------------
+		// Calculates The GPA For One Student When Inserting/Deleting Classes:
+		void Find_one_GPA(	vector< student_record* > &student_list_arr_container,
+					int    index						 );
 
-			//-----------------------------------------------------
-			// Split A Set/Subset Into 
-			// Multiples Subsets ( subarrays )
-			// Then Merge It Back Together 
-			// ( With The help Of MergeList ):
-			void mergeSort
-			(   vector< student_record* > &student_list_arr_container,
-				int    leftmost_index,
-				int    rightmost_index,
-				string searchVal										);
+		//-----------------------------------------------------
+		// Split A Set/Subset Into 
+		// Multiples Subsets ( subarrays )
+		// Then Merge It Back Together 
+		// ( With The help Of MergeList ):
+		void mergeSort
+		(   vector< student_record* > &student_list_arr_container,
+			int    leftmost_index,
+			int    rightmost_index,
+			string searchVal					);
 
-			// Merge two
-			// subsets ( subarrays ), L and M, 
-			// Back Together, Sorted:
-			void mergeList
-			(   vector< student_record* > &student_list_arr_container,
-				int    leftmost_index,
-				int    middle_index,
-				int    rightmost_index,
-				string searchVal										);
+		// Merge two
+		// subsets ( subarrays ), L and M, 
+		// Back Together, Sorted:
+		void mergeList
+		(   vector< student_record* > &student_list_arr_container,
+			int    leftmost_index,
+			int    middle_index,
+			int    rightmost_index,
+			string searchVal					);
 
 };
 
@@ -320,7 +319,7 @@ void student_roster_list::CreateClassList( ifstream &inputData ){
     int    counter_j;
     
     int    id_flag;
-	bool   is_done = false;
+    bool   is_done = false;
     //---------------------------------------------------------------------
     // Class Variable Declarations                                        :
     //---------------------------------------------------------------------
@@ -471,19 +470,19 @@ void student_roster_list::FindGPA(  ){
     //---------------------------------------------------------------------
     // Variable Declarations                                              :
     //---------------------------------------------------------------------
-	float   total_grade_summation;	 	 // This is the summation of all 
-										 // the gradesthe student recieved
-										 // in their courses
+    float   total_grade_summation;	 // This is the summation of all 
+					 // the gradesthe student recieved
+					 // in their courses
 
-	float   total_credit_summation;		 // This is the summation of all 
-										 // the course credits the student 
-										 // is taking
-	//------------------------
-    int index;							 // Used For Traversing The 
-										 // Student List
+    float   total_credit_summation;      // This is the summation of all 
+					 // the course credits the student 
+					 // is taking
+    //------------------------
+    int index;				 // Used For Traversing The 
+					 // Student List
 
     personal_class_record* traverseNode; // Used For Traversing The 
-										 // Student List
+					 // Student List
     
 
     //---------------------------------------------------------------------
@@ -492,45 +491,45 @@ void student_roster_list::FindGPA(  ){
     // Go Through The List Of Students:
     for( index = 0; index < static_cast<int>(student_list_arr.size( )); index++ ){
 		
-		// Set The Defaults For The GPA Parameters:
-		total_grade_summation		    = 0.0;
-		total_credit_summation			= 0.0;
+	// Set The Defaults For The GPA Parameters:
+	total_grade_summation	  	= 0.0;
+	total_credit_summation		= 0.0;
 
         // Traverse Each Particular Students Class Info:
         traverseNode = student_list_arr[ index ] -> personal_class_record;
         while(  traverseNode  !=  nullptr ){
 		      
-			// Add For A GRADE Of A:
-			if (    static_cast<int>(traverseNode->current_grade)  == 65 || static_cast<int>(traverseNode->current_grade) == 97)
-			{
-				total_grade_summation += static_cast<float>((traverseNode->class_credit)*4.0);
-			}
-			// Add For A GRADE Of B:
-			else if (static_cast<int>(traverseNode->current_grade) == 66 || static_cast<int>(traverseNode->current_grade) == 98)
-			{
-				total_grade_summation += static_cast<float>((traverseNode->class_credit)*3.0);
-			}
-			// Add For A GRADE Of C:
-			else if (static_cast<int>(traverseNode->current_grade) == 67 || static_cast<int>(traverseNode->current_grade) == 99)
-			{
-				total_grade_summation += static_cast<float>((traverseNode->class_credit)*2.0);
-			}
-			// Add For A GRADE Of D:
-			else if (static_cast<int>(traverseNode->current_grade) == 68 || static_cast<int>(traverseNode->current_grade) == 100)
-			{
-				total_grade_summation += static_cast<float>((traverseNode->class_credit)*1.0);
-			}
-			// No Grade Given ( e.g. incomplete grade ):
-			else {
-				total_grade_summation += 0.0;
-			}
+		// Add For A GRADE Of A:
+		if (    static_cast<int>(traverseNode->current_grade)  == 65 || static_cast<int>(traverseNode->current_grade) == 97)
+		{
+			total_grade_summation += static_cast<float>((traverseNode->class_credit)*4.0);
+		}
+		// Add For A GRADE Of B:
+		else if (static_cast<int>(traverseNode->current_grade) == 66 || static_cast<int>(traverseNode->current_grade) == 98)
+		{
+			total_grade_summation += static_cast<float>((traverseNode->class_credit)*3.0);
+		}
+		// Add For A GRADE Of C:
+		else if (static_cast<int>(traverseNode->current_grade) == 67 || static_cast<int>(traverseNode->current_grade) == 99)
+		{
+			total_grade_summation += static_cast<float>((traverseNode->class_credit)*2.0);
+		}
+		// Add For A GRADE Of D:
+		else if (static_cast<int>(traverseNode->current_grade) == 68 || static_cast<int>(traverseNode->current_grade) == 100)
+		{
+			total_grade_summation += static_cast<float>((traverseNode->class_credit)*1.0);
+		}
+		// No Grade Given ( e.g. incomplete grade ):
+		else {
+			total_grade_summation += 0.0;
+		}
 
-			// ADD The Credit:
-			total_credit_summation  += static_cast<float>(( traverseNode->class_credit ));
+		// ADD The Credit:
+		total_credit_summation  += static_cast<float>(( traverseNode->class_credit ));
 
 
-            // Move To The Next Node:
-            traverseNode = (traverseNode -> next);
+	        // Move To The Next Node:
+	        traverseNode = (traverseNode -> next);
         }
 
 
@@ -554,9 +553,9 @@ void student_roster_list::FindGPA(  ){
 //-----------------------   F U N C T I O N S :  S E C T I O N   01   --------------------------------//
 
 
-void student_roster_list::InsertNewStudent( string  f_name,
-											string  l_name,
-											int     identification_num	)
+void student_roster_list::InsertNewStudent( 	string  f_name,
+						string  l_name,
+						int     identification_num	)
 {
 //-----------------------------------------------------------------------------
 // Function Description                                                       :
@@ -577,7 +576,7 @@ void student_roster_list::InsertNewStudent( string  f_name,
 		student_record*        currentStudentNode;
 
 		//---------------------------------------------------------------------
-		// Create Student Personal Info										  :
+		// Create Student Personal Info					      :
 		//---------------------------------------------------------------------
 		currentStudentNode = new student_record;
 		currentStudentNode->f_name = f_name;
@@ -585,9 +584,9 @@ void student_roster_list::InsertNewStudent( string  f_name,
 		currentStudentNode->identification_num = identification_num;
 
 		currentStudentNode->gpa = -1.00;  // Default Value Of -1 
-										  // Is Given Since The 
-										  // Student Has Not 
-										  // Taken Any Classes
+						  // Is Given Since The 
+						  // Student Has Not 
+						  // Taken Any Classes
 
 		//---------------------------------------------------------------------
 		// Insert New Student Personal Info                                   :
@@ -611,8 +610,9 @@ void student_roster_list::InsertNewStudent( string  f_name,
 
 }
 bool student_roster_list::student_exists( string  f_name,
-										  string  l_name,
-										  int     identification_num    ){
+					  string  l_name,
+					  int     identification_num    )
+{
 //-----------------------------------------------------------------------------
 // Function Description                                                       :
 //-----------------------------------------------------------------------------
@@ -737,10 +737,10 @@ void student_roster_list::DeleteStudent(int identification_num)
 
 
 
-void student_roster_list::AddCourse(  int    identification_num,
-									  string course__name,
-									  int    class_credit,
-									  char   current_grade				)
+void student_roster_list::AddCourse(  	int    identification_num,
+					string course__name,
+					int    class_credit,
+					char   current_grade		)
 {
 //-----------------------------------------------------------------------------
 // Function Description                                                       :
@@ -817,7 +817,7 @@ void student_roster_list::AddCourse(  int    identification_num,
 
 					cout << endl;
 					cout << "--------------------------------------------------------------" << endl;
-					cout << "ERROR: The Class Already Exists In The Students Roster"		 << endl;
+					cout << "ERROR: The Class Already Exists In The Students Roster"  	 << endl;
 					cout << "--------------------------------------------------------------" << endl;
 					cout << endl;
 				}
@@ -856,7 +856,7 @@ void student_roster_list::AddCourse(  int    identification_num,
 }
 
 void student_roster_list::DeleteCourse(	int identification_num,
-										string course_name		)
+					string course_name		)
 {
 //-----------------------------------------------------------------------------
 // Function Description                                                       :
@@ -870,9 +870,9 @@ void student_roster_list::DeleteCourse(	int identification_num,
 	//---------------------------------------------------------------------
 	// Variable Declarations                                              :
 	//---------------------------------------------------------------------
-	int  index;					// While-Loop Counter
-	bool is_done;				// Checks For Abrupt Endings In The While-Loop
-	bool is_exiting;			// Check If The Process Is Done And Exits The While-loop
+	int  index;			// While-Loop Counter
+	bool is_done;			// Checks For Abrupt Endings In The While-Loop
+	bool is_exiting;		// Check If The Process Is Done And Exits The While-loop
 	bool is_student_found;		// Checks If Student Value Was Found
 	bool is_class_found;		// Checks If The Class Was Found
 	personal_class_record* traverseNode;
@@ -1054,9 +1054,9 @@ void student_roster_list::Modify(int     identification_num,
 	//---------------------------------------------------------------------
 	// Variable Declarations                                              :
 	//---------------------------------------------------------------------
-	int  index;					// While-Loop Counter
-	bool is_done;				// Checks For Abrupt Endings In The While-Loop
-	bool is_exiting;			// Check If The Process Is Done And Exits The While-loop
+	int  index;			// While-Loop Counter
+	bool is_done;			// Checks For Abrupt Endings In The While-Loop
+	bool is_exiting;		// Check If The Process Is Done And Exits The While-loop
 	bool is_student_found;		// Checks If Deletion Value Was Found
 	personal_class_record* traverseNode;
 
@@ -1158,13 +1158,13 @@ void student_roster_list::Find_one_GPA(	  vector< student_record* > &student_lis
 	//---------------------------------------------------------------------
 	// Variable Declarations                                              :
 	//---------------------------------------------------------------------
-	float   total_grade_summation;	 	 // This is the summation of all 
-										 // the gradesthe student recieved
-										 // in their courses
+	float   total_grade_summation;	 	// This is the summation of all 
+						// the gradesthe student recieved
+						// in their courses
 
-	float   total_credit_summation;		 // This is the summation of all 
-										 // the course credits the student 
-										 // is taking
+	float   total_credit_summation;		// This is the summation of all 
+						// the course credits the student 
+						// is taking
 
 	personal_class_record* traverseNode;
 
@@ -2034,7 +2034,7 @@ void student_roster_list::WarnStudent() {
 //-----------------------------------------------------------------------------
 
 
-	//---------------------------------------------------------------------
+    //---------------------------------------------------------------------
     // Initial Variable Declarations                                      :
     //---------------------------------------------------------------------
     bool is_found;
@@ -2194,12 +2194,12 @@ void student_roster_list::WarnStudent() {
 }
 
 void student_roster_list::FailStudent() {
-	//-----------------------------------------------------------------------------
-	// Function Description                                                       :
-	//-----------------------------------------------------------------------------
-	// Prints the names of students whose GPA is
-	// less than 2.0
-	//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+// Function Description                                                       :
+//-----------------------------------------------------------------------------
+// Prints the names of students whose GPA is
+// less than 2.0
+//-----------------------------------------------------------------------------
 
 
 	//---------------------------------------------------------------------
@@ -2423,11 +2423,11 @@ string student_roster_list::gpa_formatter(	vector< student_record* > &student_li
 
 
 int  student_roster_list::Student_Count() const {
-	//-----------------------------------------------------------------------------
-	// Function Description                                                       :
-	//-----------------------------------------------------------------------------
-	// Return The Number Of Students In The DataBase.
-	//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+// Function Description                                                       :
+//-----------------------------------------------------------------------------
+// Return The Number Of Students In The DataBase.
+//-----------------------------------------------------------------------------
 
 	return max_student_counter;
 }
