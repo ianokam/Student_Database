@@ -81,8 +81,8 @@ string  sentence_case( string name );
 /*                   F U N C T I O N    D E F I N I T I O N S                */
 /*---------------------------------------------------------------------------*/
 // DESCRIPTION: THIS SECTION ONLY CONTAINS THE MAIN FUNCTIONS.
-//				THE HELPER FUNCTIONS ARE LISTED BELOW THEM IN THEIR OWN
-//				SECTION.
+//		THE HELPER FUNCTIONS ARE LISTED BELOW THEM IN THEIR OWN
+//		SECTION.
 //
 void main_menu( PROGRAM_STATE &statusType, MENU_OPTIONS &choiceType ){
 //-----------------------------------------------------------------------------
@@ -96,23 +96,23 @@ void main_menu( PROGRAM_STATE &statusType, MENU_OPTIONS &choiceType ){
     // Vairable Declaration                                               :
     //---------------------------------------------------------------------
     string menu_input_option="";
-	bool is_done;
+    bool is_done;
     
     //---------------------------------------------------------------------
     // PROGRAM DESCRIPTION                                                :
     //---------------------------------------------------------------------
     cout << "-----------------------------------------------------------------------------------------------"	<< endl;
     cout << "  SENIOR CLASS LIST DATABASE -  MAIN MENU                                                     :"	<< endl;
-	cout << "-----------------------------------------------------------------------------------------------"	<< endl;
-    cout << "  This Program Allows You To Update The Senior Class Student Database."							<< endl;
-    cout << "  Enter One Of The Options Below To Query The Database:"											<< endl;
-    cout << ""																									<< endl;
-    cout << "       - UPDATE_LIST"																				<< endl;
-    cout << "       - UPDATE_STUDENT_ACCOUNT"																	<< endl;
-    cout << "       - SEARCH_LIST"																				<< endl;
-    cout << "       - SORT_LIST"																				<< endl;
-    cout << "       - PRINT_LIST"																				<< endl;
-    cout << "       - QUIT"																						<< endl;
+    cout << "-----------------------------------------------------------------------------------------------"	<< endl;
+    cout << "  This Program Allows You To Update The Senior Class Student Database."				<< endl;
+    cout << "  Enter One Of The Options Below To Query The Database:"						<< endl;
+    cout << ""													<< endl;
+    cout << "       - UPDATE_LIST"										<< endl;
+    cout << "       - UPDATE_STUDENT_ACCOUNT"									<< endl;
+    cout << "       - SEARCH_LIST"										<< endl;
+    cout << "       - SORT_LIST"										<< endl;
+    cout << "       - PRINT_LIST"										<< endl;
+    cout << "       - QUIT"											<< endl;
     cout << endl; 
     
 	// While-loop Flag:
@@ -132,37 +132,37 @@ void main_menu( PROGRAM_STATE &statusType, MENU_OPTIONS &choiceType ){
             if (      menu_input_option ==  "UPDATE_LIST"            ){
                 choiceType = UPDATE_LIST;
                 statusType = ON;
-				is_done = true;
-				cout << endl << endl;
+		is_done = true;
+		cout << endl << endl;
             }
             else if ( menu_input_option ==  "UPDATE_STUDENT_ACCOUNT" ){
                 choiceType = UPDATE_STUDENT_ACCOUNT;
                 statusType = ON;
-				is_done = true;
-				cout << endl << endl;
+		is_done = true;
+		cout << endl << endl;
             }
             else if ( menu_input_option ==  "SEARCH_LIST"            ){
                 choiceType = SEARCH_LIST;
                 statusType = ON;
-				is_done = true;
-				cout << endl << endl;
+		is_done = true;
+		cout << endl << endl;
             }
             else if ( menu_input_option ==  "SORT_LIST"              ){
                 choiceType = SORT_LIST;
                 statusType = ON;
-				is_done = true;
-				cout << endl << endl;
+		is_done = true;
+		cout << endl << endl;
             }
             else if ( menu_input_option ==  "PRINT_LIST"             ){
                 choiceType = PRINT_LIST;
                 statusType = ON;
-				is_done = true;
-				cout << endl << endl;
+		is_done = true;
+		cout << endl << endl;
             }
             else if ( menu_input_option ==  "QUIT"                   ){
                 statusType = OFF;
-				is_done = true;
-				cout << endl << endl;
+		is_done = true;
+		cout << endl << endl;
             }
             else{
                 // ERROR REACHED:
@@ -173,7 +173,7 @@ void main_menu( PROGRAM_STATE &statusType, MENU_OPTIONS &choiceType ){
             
             cout<< endl;
             cout<< "---------------------------------"<< endl;
-            cout<< "ERROR:" << excpt.what() << endl;
+            cout<< "ERROR:" << excpt.what()           << endl;
             cout<< "---------------------------------"<< endl;
             cout<< endl;
         }
@@ -197,22 +197,22 @@ void update_student_list_menu( student_roster_list &studentList ){
     string f_name, l_name;
     string menu_input_option, search_val;
     bool is_done;
-	int  index;
-	bool condition_passed;
-	bool condition2_passed;
+    int  index;
+    bool condition_passed;
+    bool condition2_passed;
     
     //---------------------------------------------------------------------
     // PROGRAM DESCRIPTION                                                :
     //---------------------------------------------------------------------
-	cout << "-----------------------------------------------------------------------------------------------"	<< endl;
+    cout << "-----------------------------------------------------------------------------------------------"	<< endl;
     cout << "  SENIOR CLASS LIST DATABASE -  UPDATE STUDENT LIST                                           :"	<< endl;
-	cout << "-----------------------------------------------------------------------------------------------"	<< endl;
-    cout << "  Add or delete students from the list."															<< endl;
-    cout << "  You can Query The Database With These Options:"													<< endl;
-    cout << ""																									<< endl;
-    cout << "       - ADD_STUDENT"																				<< endl;
-    cout << "       - DELETE_STUDENT"																			<< endl;
-    cout << "       - RETURN_TO_MAIN_MENU"																		<< endl;
+    cout << "-----------------------------------------------------------------------------------------------"	<< endl;
+    cout << "  Add or delete students from the list."								<< endl;
+    cout << "  You can Query The Database With These Options:"							<< endl;
+    cout << ""													<< endl;
+    cout << "       - ADD_STUDENT"						 				<< endl;
+    cout << "       - DELETE_STUDENT"								                << endl;
+    cout << "       - RETURN_TO_MAIN_MENU"									<< endl;
     cout << endl;
 
 	// While-loop Flag:
@@ -254,7 +254,7 @@ void update_student_list_menu( student_roster_list &studentList ){
 						{
 
 							if (!((static_cast<int>(f_name[index]) >= 65 && static_cast<int>(f_name[index]) <= 90) ||
-								 (static_cast<int>(f_name[index]) >= 97 && static_cast<int>(f_name[index]) <= 122)) ) {
+							      (static_cast<int>(f_name[index]) >= 97 && static_cast<int>(f_name[index]) <= 122)) ) {
 
 								condition2_passed = false;
 							}
@@ -314,7 +314,7 @@ void update_student_list_menu( student_roster_list &studentList ){
 						{
 
 							if (!((static_cast<int>(l_name[index]) >= 65 && static_cast<int>(l_name[index]) <= 90) ||
-								(static_cast<int>(l_name[index]) >= 97 && static_cast<int>(l_name[index]) <= 122))) {
+							      (static_cast<int>(l_name[index]) >= 97 && static_cast<int>(l_name[index]) <= 122))) {
 
 								condition2_passed = false;
 							}
@@ -345,7 +345,7 @@ void update_student_list_menu( student_roster_list &studentList ){
 
 						cout << endl;
 						cout << "---------------------------------------------------------------" << endl;
-						cout << "ERROR:" << excpt.what() << endl;
+						cout << "ERROR:" << excpt.what()                                          << endl;
 						cout << "---------------------------------------------------------------" << endl;
 						cout << endl;
 					}
@@ -533,27 +533,27 @@ void update_student_class_list_menu( student_roster_list &studentList ){
     //------------------------------------
     // Program Menu - Input Variables    :
     //------------------------------------
-	string menu_input_option;
-	int id;
-	string course__name;
+    string menu_input_option;
+    int id;
+    string course__name;
     int    class_credit;
-	char   current_grade;
+    char   current_grade;
     bool   is_done;
-	bool   condition_passed;
+    bool   condition_passed;
     
     //---------------------------------------------------------------------
     // PROGRAM DESCRIPTION                                                :
     //---------------------------------------------------------------------
-	cout << "-----------------------------------------------------------------------------------------------" << endl;
+    cout << "-----------------------------------------------------------------------------------------------" << endl;
     cout << "  SENIOR CLASS LIST DATABASE -  UPDATE A STUDENTS CLASS INFO                                  :" << endl;
-	cout << "-----------------------------------------------------------------------------------------------" << endl;
-    cout << "  Searches and updates a students class info."													  << endl;
-    cout << "  You can Query The Database With These Options:"												  << endl;
-    cout << ""																								  << endl;
-    cout << "       - ADD_COURSE"																			  << endl;
-    cout << "       - DELETE_COURSE"																		  << endl;
-    cout << "       - UPDATE_COURSE_GRADE"																	  << endl;
-    cout << "       - RETURN_TO_MAIN_MENU"																      << endl;
+    cout << "-----------------------------------------------------------------------------------------------" << endl;
+    cout << "  Searches and updates a students class info."						      << endl;
+    cout << "  You can Query The Database With These Options:"						      << endl;
+    cout << ""												      << endl;
+    cout << "       - ADD_COURSE"									      << endl;
+    cout << "       - DELETE_COURSE"									      << endl;
+    cout << "       - UPDATE_COURSE_GRADE"								      << endl;
+    cout << "       - RETURN_TO_MAIN_MENU"								      << endl;
     cout << endl;
      
     // While-loop Flag:
@@ -692,25 +692,25 @@ void update_student_class_list_menu( student_roster_list &studentList ){
                          // Test 1 - Check If The Correct Data Type Has Been Inserted:
                          if (!(cin >> current_grade)) {
 
-							 cin.clear();
-							 cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			     cin.clear();
+			     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                              // ERROR REACHED:
                              throw runtime_error("Invalid Letter Grade Value Length");
                          }
-						 // Test 2 - Check That ONLY A Grade Of A, B, C, D, E:
-						 if (!((current_grade >= 'A'  &&  current_grade <= 'E') ||
-							 (current_grade >= 'a'  &&  current_grade <= 'e')))
-						 {
+			// Test 2 - Check That ONLY A Grade Of A, B, C, D, E:
+			if (!((current_grade >= 'A'  &&  current_grade <= 'E') ||
+			      (current_grade >= 'a'  &&  current_grade <= 'e')))
+			{
 
-							 // ERROR REACHED:
-							 throw runtime_error("Grade Can Only Be A Letter Of A,B,C,D, Or E");
-						 }
+				// ERROR REACHED:
+				throw runtime_error("Grade Can Only Be A Letter Of A,B,C,D, Or E");
+			}
                      
-						 // Change to uppercase letters:
-						 if ( current_grade >= 'a'  &&  current_grade <= 'e' ){
+			// Change to uppercase letters:
+			if ( current_grade >= 'a'  &&  current_grade <= 'e' ){
 
-							 current_grade = static_cast<char>(  static_cast<int>(current_grade) - 32  );
-						 }
+				current_grade = static_cast<char>(  static_cast<int>(current_grade) - 32  );
+			}
 
                          condition_passed = true;
                      }
@@ -724,15 +724,15 @@ void update_student_class_list_menu( student_roster_list &studentList ){
                      }
                  }
 
-				 //-----------------------------------------------------------------------------
-				 // INPUT DATA INTO LIST, INSIDE OF STUDENTS COURSE LIST	                   :
-				 //-----------------------------------------------------------------------------
+		 //-----------------------------------------------------------------------------
+		 // INPUT DATA INTO LIST, INSIDE OF STUDENTS COURSE LIST	                   :
+		 //-----------------------------------------------------------------------------
                  studentList.AddCourse( id, 
-										course__name, 
-										class_credit, 
-										current_grade	);
-				 is_done = true;
-				 cout << endl << endl;
+					course__name, 
+					class_credit, 
+					current_grade	);
+		 is_done = true;
+		 cout << endl << endl;
 
 
 
@@ -740,238 +740,237 @@ void update_student_class_list_menu( student_roster_list &studentList ){
              else if ( menu_input_option ==  "DELETE_COURSE" ){
 
                  
-				 //-----------------------------------------------------------------------------
-				 // INPUT IDENTIFICATION NUMBER                                                :
-				 //-----------------------------------------------------------------------------
-				 // Initialize The While-Loop Flag:
-				 condition_passed = false;
+	     //-----------------------------------------------------------------------------
+	     // INPUT IDENTIFICATION NUMBER                                                :
+	     //-----------------------------------------------------------------------------
+	     // Initialize The While-Loop Flag:
+	     condition_passed = false;
 
-				 while (condition_passed == false) {
+	     while (condition_passed == false) {
 
-					 cout << "ENTER THE STUDENTS ID NUMBER:    ";
-					 try {
+	     cout << "ENTER THE STUDENTS ID NUMBER:    ";
+	     try {
 
-						 // Test 1 - Check If The Correct Data Type Has Been Inserted:
-						 if (!(cin >> id)) {
+			// Test 1 - Check If The Correct Data Type Has Been Inserted:
+			if (!(cin >> id)) {
 
-							 cin.clear();
-							 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-							 // ERROR REACHED:
-							 throw runtime_error("Invalid ID Number");
-						 }
-						 // Test 2 - Check The Length Of The ID Number ( IT MUST BE 5 DIGITS ):
-						 else if (!(id >= 10000 && id <= 99999)) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				// ERROR REACHED:
+				throw runtime_error("Invalid ID Number");
+			}
+			// Test 2 - Check The Length Of The ID Number ( IT MUST BE 5 DIGITS ):
+			 else if (!(id >= 10000 && id <= 99999)) {
 
-							 // ERROR REACHED:
-							 throw runtime_error("ID Number Must Have 5 Digits");
-						 }
-						 else {
-							 condition_passed = true;
-						 }
-					 }
-					 catch (runtime_error& excpt) {
-
-						 cout << endl;
-						 cout << "----------------------------------------------------" << endl;
-						 cout << "ERROR: " << excpt.what() << endl;
-						 cout << "----------------------------------------------------" << endl;
-						 cout << endl;
-					 }
-				 }
-
-
-				 //-----------------------------------------------------------------------------
-				 // INPUT CLASS NAME                                                           :
-				 //-----------------------------------------------------------------------------
-				 // Reinitialize The While-Loop Flag:
-				 condition_passed = false;
-
-				 while (condition_passed == false) {
-
-					 cout << "ENTER THE STUDENTS CLASS NAME:   ";
-					 try {
-
-						 cin >> course__name;
-
-						 // Test 1 - Check The Length Of The Class Name:
-						 if (!(course__name.size() >= 6 && course__name.size() <= 7)) {
-
-							 // ERROR REACHED:
-							 throw runtime_error("Class Name Must Have A Length Of 6 Or 7");
-						 }
-
-						 condition_passed = true;
-					 }
-					 catch (runtime_error& excpt) {
-
-						 cout << endl;
-						 cout << "----------------------------------------------------" << endl;
-						 cout << "ERROR: " << excpt.what() << endl;
-						 cout << "----------------------------------------------------" << endl;
-						 cout << endl;
-					 }
-				 }
-
-
-				 //-----------------------------------------------------------------------------
-				 // DELETE THE STUDENTS COURSE                                                 :
-				 //-----------------------------------------------------------------------------
-                 studentList.DeleteCourse( id, course__name );
-				 is_done = true;
-				 cout << endl << endl;
-
-
-
-             }
-             else if ( menu_input_option ==  "UPDATE_COURSE_GRADE" ){
-                 
-				 //-----------------------------------------------------------------------------
-				 // INPUT IDENTIFICATION NUMBER                                                :
-				 //-----------------------------------------------------------------------------
-				 // Initialize The While-Loop Flag:
-				 condition_passed = false;
-
-				 while (condition_passed == false) {
-
-					 cout << "ENTER THE STUDENTS ID NUMBER:    ";
-					 try {
-
-						 // Test 1 - Check If The Correct Data Type Has Been Inserted:
-						 if (!(cin >> id)) {
-
-							 cin.clear();
-							 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-							 // ERROR REACHED:
-							 throw runtime_error("Invalid ID Number");
-						 }
-						 // Test 2 - Check The Length Of The ID Number ( IT MUST BE 5 DIGITS ):
-						 else if (!(id >= 10000 && id <= 99999)) {
-
-							 // ERROR REACHED:
-							 throw runtime_error("ID Number Must Have 5 Digits");
-						 }
-						 else {
-							 condition_passed = true;
-						 }
-					 }
-					 catch (runtime_error& excpt) {
-
-						 cout << endl;
-						 cout << "----------------------------------------------------" << endl;
-						 cout << "ERROR: " << excpt.what() << endl;
-						 cout << "----------------------------------------------------" << endl;
-						 cout << endl;
-					 }
-				 }
-
-
-				 //-----------------------------------------------------------------------------
-				 // INPUT CLASS NAME                                                           :
-				 //-----------------------------------------------------------------------------
-				 // Reinitialize The While-Loop Flag:
-				 condition_passed = false;
-
-				 while (condition_passed == false) {
-
-					 cout << "ENTER THE STUDENTS CLASS NAME:   ";
-					 try {
-
-						 cin >> course__name;
-
-						 // Test 1 - Check The Length Of The Class Name:
-						 if (!(course__name.size() >= 6 && course__name.size() <= 7)) {
-
-							 // ERROR REACHED:
-							 throw runtime_error("Class Name Must Have A Length Of 6 Or 7");
-						 }
-
-						 condition_passed = true;
-					 }
-					 catch (runtime_error& excpt) {
-
-						 cout << endl;
-						 cout << "----------------------------------------------------" << endl;
-						 cout << "ERROR: " << excpt.what() << endl;
-						 cout << "----------------------------------------------------" << endl;
-						 cout << endl;
-					 }
-				 }
-
-				 //-----------------------------------------------------------------------------
-				 // INPUT CLASS GRADE EARNED                                                   :
-				 //-----------------------------------------------------------------------------
-				 // Reinitialize The While-Loop Flag:
-				 condition_passed = false;
-
-				 while (condition_passed == false) {
-
-					 cout << "ENTER THE STUDENTS COURSE GRADE:    ";
-					 try {
-
-						 // Test 1 - Check If The Correct Data Type Has Been Inserted:
-						 if (!(cin >> current_grade)) {
-
-							 cin.clear();
-							 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-							 // ERROR REACHED:
-							 throw runtime_error("Invalid Letter Grade Value Length");
-						 }
-						 // Test 2 - Check That ONLY A Grade Of A, B, C, D, E:
-						 if (!(( current_grade >= 'A'  &&  current_grade <= 'E' ) ||
-							   ( current_grade >= 'a'  &&  current_grade <= 'e' )	 )	)
-						 {
-
-							 // ERROR REACHED:
-							 throw runtime_error("Grade Can Only Be A Letter Of A,B,C,D, Or E");
-						 }
-
-						 // Change to uppercase letters:
-						 if (current_grade >= 'a'  &&  current_grade <= 'e') {
-
-							 current_grade = static_cast<char>(static_cast<int>(current_grade) - 32);
-						 }
-
-						 condition_passed = true;
-					 }
-					 catch (runtime_error& excpt) {
-
-						 cout << endl;
-						 cout << "----------------------------------------------------" << endl;
-						 cout << "ERROR:" << excpt.what() << endl;
-						 cout << "----------------------------------------------------" << endl;
-						 cout << endl;
-					 }
-				 }
-
-				 //-----------------------------------------------------------------------------
-				 // MODIFY THE STUDENTS GRADE 	                                               :
-				 //-----------------------------------------------------------------------------
-
-                 studentList.Modify( id, course__name, current_grade );
-				 is_done = true;
-				 cout << endl << endl;
-
-				 
-             }
-			 else if (menu_input_option == "RETURN_TO_MAIN_MENU") {
-
-				 is_done = true;
-				 cout << endl << endl;
-
+				 // ERROR REACHED:
+				 throw runtime_error("ID Number Must Have 5 Digits");
 			 }
 			 else {
-				 // ERROR REACHED:
-				 throw runtime_error("INVALID menu input option");
+				 condition_passed = true;
 			 }
-         }
+		 }
 		 catch (runtime_error& excpt) {
 
 			 cout << endl;
-			 cout << "---------------------------------" << endl;
-			 cout << "ERROR:" << excpt.what() << endl;
-			 cout << "---------------------------------" << endl;
+			 cout << "----------------------------------------------------" << endl;
+			 cout << "ERROR: " << excpt.what() << endl;
+			 cout << "----------------------------------------------------" << endl;
 			 cout << endl;
 		 }
+	 }
+
+
+	 //-----------------------------------------------------------------------------
+	 // INPUT CLASS NAME                                                           :
+	 //-----------------------------------------------------------------------------
+	 // Reinitialize The While-Loop Flag:
+	 condition_passed = false;
+
+	 while (condition_passed == false) {
+
+		 cout << "ENTER THE STUDENTS CLASS NAME:   ";
+		 try {
+
+			 cin >> course__name;
+
+			 // Test 1 - Check The Length Of The Class Name:
+			 if (!(course__name.size() >= 6 && course__name.size() <= 7)) {
+
+				 // ERROR REACHED:
+				 throw runtime_error("Class Name Must Have A Length Of 6 Or 7");
+			 }
+
+			 condition_passed = true;
+		 }
+		 catch (runtime_error& excpt) {
+
+			 cout << endl;
+			 cout << "----------------------------------------------------" << endl;
+			 cout << "ERROR: " << excpt.what() << endl;
+			 cout << "----------------------------------------------------" << endl;
+			 cout << endl;
+		 }
+	 }
+
+
+	 //-----------------------------------------------------------------------------
+	 // DELETE THE STUDENTS COURSE                                                 :
+	 //-----------------------------------------------------------------------------
+   	 studentList.DeleteCourse( id, course__name );
+	 is_done = true;
+	 cout << endl << endl;
+
+
+
+     }
+     else if ( menu_input_option ==  "UPDATE_COURSE_GRADE" ){
+
+	 //-----------------------------------------------------------------------------
+	 // INPUT IDENTIFICATION NUMBER                                                :
+	 //-----------------------------------------------------------------------------
+	 // Initialize The While-Loop Flag:
+	 condition_passed = false;
+
+	 while (condition_passed == false) {
+
+		 cout << "ENTER THE STUDENTS ID NUMBER:    ";
+		 try {
+
+			 // Test 1 - Check If The Correct Data Type Has Been Inserted:
+			 if (!(cin >> id)) {
+
+				 cin.clear();
+				 cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				 // ERROR REACHED:
+				 throw runtime_error("Invalid ID Number");
+			 }
+			 // Test 2 - Check The Length Of The ID Number ( IT MUST BE 5 DIGITS ):
+			 else if (!(id >= 10000 && id <= 99999)) {
+
+				 // ERROR REACHED:
+				 throw runtime_error("ID Number Must Have 5 Digits");
+			 }
+			 else {
+				 condition_passed = true;
+			 }
+		 }
+		 catch (runtime_error& excpt) {
+
+			 cout << endl;
+			 cout << "----------------------------------------------------" << endl;
+			 cout << "ERROR: " << excpt.what() << endl;
+			 cout << "----------------------------------------------------" << endl;
+			 cout << endl;
+		 }
+	 }
+
+
+	 //-----------------------------------------------------------------------------
+	 // INPUT CLASS NAME                                                           :
+	 //-----------------------------------------------------------------------------
+	 // Reinitialize The While-Loop Flag:
+	 condition_passed = false;
+
+	 while (condition_passed == false) {
+
+		 cout << "ENTER THE STUDENTS CLASS NAME:   ";
+		 try {
+
+			 cin >> course__name;
+
+			 // Test 1 - Check The Length Of The Class Name:
+			 if (!(course__name.size() >= 6 && course__name.size() <= 7)) {
+
+				 // ERROR REACHED:
+				 throw runtime_error("Class Name Must Have A Length Of 6 Or 7");
+			 }
+
+			 condition_passed = true;
+		 }
+		 catch (runtime_error& excpt) {
+
+			 cout << endl;
+			 cout << "----------------------------------------------------" << endl;
+			 cout << "ERROR: " << excpt.what() << endl;
+			 cout << "----------------------------------------------------" << endl;
+			 cout << endl;
+		 }
+	 }
+
+	 //-----------------------------------------------------------------------------
+	 // INPUT CLASS GRADE EARNED                                                   :
+	 //-----------------------------------------------------------------------------
+	 // Reinitialize The While-Loop Flag:
+	 condition_passed = false;
+
+	 while (condition_passed == false) {
+
+		 cout << "ENTER THE STUDENTS COURSE GRADE:    ";
+		 try {
+
+			 // Test 1 - Check If The Correct Data Type Has Been Inserted:
+			 if (!(cin >> current_grade)) {
+
+				 cin.clear();
+				 cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				 // ERROR REACHED:
+				 throw runtime_error("Invalid Letter Grade Value Length");
+			 }
+			 // Test 2 - Check That ONLY A Grade Of A, B, C, D, E:
+			 if (!(( current_grade >= 'A'  &&  current_grade <= 'E' ) ||
+				   ( current_grade >= 'a'  &&  current_grade <= 'e' )	 )	)
+			 {
+
+				 // ERROR REACHED:
+				 throw runtime_error("Grade Can Only Be A Letter Of A,B,C,D, Or E");
+			 }
+
+			 // Change to uppercase letters:
+			 if (current_grade >= 'a'  &&  current_grade <= 'e') {
+
+				 current_grade = static_cast<char>(static_cast<int>(current_grade) - 32);
+			 }
+
+			 condition_passed = true;
+		 }
+		 catch (runtime_error& excpt) {
+
+			 cout << endl;
+			 cout << "----------------------------------------------------" << endl;
+			 cout << "ERROR:" << excpt.what()                               << endl;
+			 cout << "----------------------------------------------------" << endl;
+			 cout << endl;
+		 }
+	 }
+
+	//-----------------------------------------------------------------------------
+	// MODIFY THE STUDENTS GRADE                                                  :
+	//-----------------------------------------------------------------------------
+	 studentList.Modify( id, course__name, current_grade );
+			 is_done = true;
+			 cout << endl << endl;
+
+				 
+        }
+	 else if (menu_input_option == "RETURN_TO_MAIN_MENU") {
+
+		 is_done = true;
+		 cout << endl << endl;
+
+	 }
+	 else {
+		 // ERROR REACHED:
+		 throw runtime_error("INVALID menu input option");
+	 }
+   }
+	 catch (runtime_error& excpt) {
+
+		 cout << endl;
+		 cout << "---------------------------------" << endl;
+		 cout << "ERROR:" << excpt.what() << endl;
+		 cout << "---------------------------------" << endl;
+		 cout << endl;
+	 }
     }
     // End While-Loop - "SUBMENU" :
     //--------------------------------------------------------------
@@ -995,10 +994,10 @@ void search_menu( student_roster_list studentList ){
     //---------------------------------------------------------------------
     // PROGRAM DESCRIPTION                                                :
     //---------------------------------------------------------------------
-	cout << "-----------------------------------------------------------------------------------------------" << endl;
+    cout << "-----------------------------------------------------------------------------------------------" << endl;
     cout << "  SENIOR CLASS LIST DATABASE -  SEARCH THE STUDENT LIST                                       :" << endl;
-	cout << "-----------------------------------------------------------------------------------------------" << endl;
-    cout << "  Search for students in the database."													      << endl;
+    cout << "-----------------------------------------------------------------------------------------------" << endl;
+    cout << "  Search for students in the database."							      << endl;
     cout << endl;
     
     // While-loop Flag:
@@ -1081,17 +1080,17 @@ void sort_menu( student_roster_list &studentList ){
     //---------------------------------------------------------------------
     // PROGRAM DESCRIPTION                                                :
     //---------------------------------------------------------------------
-	cout << "-----------------------------------------------------------------------------------------------" << endl;
+    cout << "-----------------------------------------------------------------------------------------------" << endl;
     cout << "  SENIOR CLASS LIST DATABASE -  SORT THE STUDENT LIST                                         :" << endl;
-	cout << "-----------------------------------------------------------------------------------------------" << endl;
-    cout << "  Sorts students in the database."																  << endl;
-    cout << "  Query The Database With This Options:"														  << endl;
-    cout << ""																								  << endl;
-    cout << "       - FIRST_NAME"																			  << endl;
-    cout << "       - LAST_NAME"																			  << endl;
-    cout << "       - ID_NUM"																				  << endl;
-	cout << "       - GPA"																					  << endl;
-    cout << "       - RETURN_TO_MAIN_MENU"																	  << endl;
+    cout << "-----------------------------------------------------------------------------------------------" << endl;
+    cout << "  Sorts students in the database."								      << endl;
+    cout << "  Query The Database With This Options:"							      << endl;
+    cout << ""												      << endl;
+    cout << "       - FIRST_NAME"									      << endl;
+    cout << "       - LAST_NAME"									      << endl;
+    cout << "       - ID_NUM"										      << endl;
+    cout << "       - GPA"										      << endl;
+    cout << "       - RETURN_TO_MAIN_MENU"								      << endl;
     cout << endl;
     
     
@@ -1112,9 +1111,9 @@ void sort_menu( student_roster_list &studentList ){
 				is_done = true;
 			}
 			else if(	search_val == "FIRST_NAME" ||
-						search_val == "LAST_NAME"  ||
-						search_val == "ID_NUM"	   ||	
-					    search_val == "GPA"				)
+					search_val == "LAST_NAME"  ||
+					search_val == "ID_NUM"	   ||	
+					search_val == "GPA"				)
 			{
 				studentList.Sort(search_val);
 				
@@ -1162,17 +1161,17 @@ void print_menu( student_roster_list studentList ){
     //---------------------------------------------------------------------
     // PROGRAM DESCRIPTION                                                :
     //---------------------------------------------------------------------
-	cout << "-----------------------------------------------------------------------------------------------" << endl;
+    cout << "-----------------------------------------------------------------------------------------------" << endl;
     cout << "  SENIOR CLASS LIST DATABASE -  PRINT FROM THE STUDENT LIST                                   :" << endl;
-	cout << "-----------------------------------------------------------------------------------------------" << endl;
-    cout << "  Prints students in the database."															  << endl;
-    cout << "  Query The Database With This Options:"														  << endl;
-    cout << ""																								  << endl;
-    cout << "       - STUDENT_LIST"																			  << endl;
-    cout << "       - HONOR_STUDENTS"																		  << endl;
-	cout << "       - PROBATION_STUDENTS"																	  << endl;
-    cout << "       - FAILING_STUDENTS"																		  << endl;
-    cout << "       - RETURN_TO_MAIN_MENU"																      << endl;
+    cout << "-----------------------------------------------------------------------------------------------" << endl;
+    cout << "  Prints students in the database."	 					              << endl;
+    cout << "  Query The Database With This Options:"							      << endl;
+    cout << ""												      << endl;
+    cout << "       - STUDENT_LIST"									      << endl;
+    cout << "       - HONOR_STUDENTS"									      << endl;
+    cout << "       - PROBATION_STUDENTS"								      << endl;
+    cout << "       - FAILING_STUDENTS"									      << endl;
+    cout << "       - RETURN_TO_MAIN_MENU"								      << endl;
     cout << endl;
     
     // While-loop Flag:
